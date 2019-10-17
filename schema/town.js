@@ -10,6 +10,7 @@ const townSchema = new Schema ({
     channelId: String,
     name: String,
     region: String,
+    facation: ObjectId,
     shops: [{shop: ObjectId}],
     npcs: [{npc: ObjectId}]
 });
