@@ -10,7 +10,7 @@ const bot = new Eris.Client(config.BOT_TOKEN, {
 
 //ready
 bot.on(`ready`, () => {
-    console.log(`Weclome to Discordia`);
+    console.log(`Weclome to Discordia!`);
 });
 
 
