@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const accountSchema = new Schema ({
-    username: String,
+    userId: String,
     createdAt: {type: Date, default: Date.now },
     lastActive: Date,
     restrictions: [{restriction: String, earned: Date, expires: Date}],
@@ -14,3 +14,8 @@ const accountSchema = new Schema ({
     banned: Boolean,
     playerId: ObjectId
 });
+
+accountSchema.methods.restrict = function(user, restriction, expiry) {
+    let userDoc = this.model(`Account`).find({userId: user});
+    //add a restriction
+}
