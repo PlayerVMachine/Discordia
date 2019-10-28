@@ -28,7 +28,7 @@ accountSchema.methods.unrestrict = function(userId, restriction) {
     //find userId and remove restriction from array
 }
 
-accountSchema.metods.addBonus = function (UserId, bonus, expiry) {
+accountSchema.methods.addBonus = function (UserId, bonus, expiry) {
     //find userId and add bonus
 }
 
