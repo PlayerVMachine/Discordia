@@ -12,10 +12,36 @@ const accountSchema = new Schema ({
     restrictions: [{restriction: String, earned: Date, expires: Date}],
     bonuses: [{bonus: String, earned: Date, expires: Date}],
     banned: Boolean,
-    playerId: ObjectId
+    playerId: ObjectId //Account is created first so the link likely doesn't work this way
 });
 
-accountSchema.methods.restrict = function(user, restriction, expiry) {
-    let userDoc = this.model(`Account`).find({userId: user});
+accountSchema.methods.updateActivity = function (userId) {
+    //find userid update lastActive to Date.now
+}
+
+accountSchema.methods.restrict = function(userId, restriction, expiry) {
+    let userDoc = this.model(`Account`).find({userId: userId});
     //add a restriction
 }
+
+accountSchema.methods.unrestrict = function(userId, restriction) {
+    //find userId and remove restriction from array
+}
+
+accountSchema.metods.addBonus = function (UserId, bonus, expiry) {
+    //find userId and add bonus
+}
+
+accountSchema.methods.remBonus = function (userId, bonus) {
+    //find userId and remove bonus
+}
+
+accountSchema.methods.ban = function (userId) {
+    //find userId and set ban = true
+}
+
+accountSchema.methods.unBan = function (userId) {
+    //find userId and set ban = false
+}
+
+
